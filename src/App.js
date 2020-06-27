@@ -1,17 +1,27 @@
-import React from 'react';
-import logo from './freakyos.png';
-import './App.css';
+import React from "react";
+import { Spinner } from "reactstrap";
+const DownloadPage = React.lazy(() => import('./Components/MobileCard'));
+
+function Loading() {
+  return (
+    <React.Fragment>
+      <Spinner type="grow" color="primary" />
+      <Spinner type="grow" color="secondary" />
+      <Spinner type="grow" color="success" />
+      <Spinner type="grow" color="danger" />
+      <Spinner type="grow" color="warning" />
+      <Spinner type="grow" color="info" />
+      <Spinner type="grow" color="light" />
+      <Spinner type="grow" color="dark" />
+    </React.Fragment>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-          <h3>
-            Website under construction!!!
-          </h3>
-      </header>
-    </div>
+    <React.Suspense fallback={<Loading />}>
+      <DownloadPage />
+    </React.Suspense>
   );
 }
 
