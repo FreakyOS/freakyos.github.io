@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import {
     Card, CardImg, CardText, CardBody,
-    Button, CardHeader, CardFooter
+  Button, CardHeader, CardFooter, Collapse
 } from 'reactstrap';
 
 class MobileCardDetail extends Component{
@@ -10,8 +10,16 @@ class MobileCardDetail extends Component{
         super(props);
         this.state = {
             details: {},
-            changelog: `https://raw.githubusercontent.com/FreakyOS/ota_config/still_alive/${this.props.device.codename}/${this.props.device.codename}.txt`
+            changelog: `https://raw.githubusercontent.com/FreakyOS/ota_config/still_alive/${this.props.device.codename}/${this.props.device.codename}.txt`,
+            isOpen: false
         }
+        this.toggle = this.toggle.bind(this);
+    }
+    
+    toggle(){
+      this.setState({
+        isOpen: !this.state.isOpen
+      })
     }
     
     componentDidMount(){
@@ -27,47 +35,51 @@ class MobileCardDetail extends Component{
     render(){
         return (
           <React.Fragment>
-            <Card>
-              <CardHeader><b>{this.props.device.name}</b></CardHeader>
-              <CardImg
-                top
-                width="100%"
-                src={this.props.device.image}
-                alt="Device Image"
-              />
-              <CardBody>
-                <CardText>
-                  <b>Codename:</b> {this.props.device.codename}
-                </CardText>
-                <CardText>
-                  <b>Maintainer:</b> {this.props.device.maintainer}
-                </CardText>
-                <CardText>
-                  <b>Filename:</b> {this.state.details.filename}
-                </CardText>
-                <CardText>
-                  <b>Version:</b> {this.state.details.version}
-                </CardText>
-              </CardBody>
-              <CardFooter>
-                <Button
-                  href={this.state.details.url}
-                  target="_blank"
-                  color="primary"
-                  rel="noopener noreferrer"
-                >
-                  Download
+            <CardHeader style={{ cursor: 'pointer' }} onClick={this.toggle}>
+              <b>{this.props.device.name}</b>
+            </CardHeader>
+            <Collapse isOpen={this.state.isOpen}>
+              <Card>
+                <CardImg
+                  top
+                  width="100%"
+                  src={this.props.device.image}
+                  alt="Device Image"
+                />
+                <CardBody>
+                  <CardText>
+                    <b>Codename:</b> {this.props.device.codename}
+                  </CardText>
+                  <CardText>
+                    <b>Maintainer:</b> {this.props.device.maintainer}
+                  </CardText>
+                  <CardText>
+                    <b>Filename:</b> {this.state.details.filename}
+                  </CardText>
+                  <CardText>
+                    <b>Version:</b> {this.state.details.version}
+                  </CardText>
+                </CardBody>
+                <CardFooter>
+                  <Button
+                    href={this.state.details.url}
+                    target="_blank"
+                    color="primary"
+                    rel="noopener noreferrer"
+                  >
+                    Download
                 </Button>
                 &nbsp; &nbsp;
                 <Button
-                  href={this.state.changelog}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Changelog
+                    href={this.state.changelog}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Changelog
                 </Button>
-              </CardFooter>
-            </Card>
+                </CardFooter>
+              </Card>
+            </Collapse>
           </React.Fragment>
         );
     }

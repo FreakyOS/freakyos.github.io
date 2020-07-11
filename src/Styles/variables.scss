@@ -1,0 +1,26 @@
+  
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+$primary: #00F801;
+$body-bg: black;
+$body-color: white;
+
+$border-width: 1px;
+$border-color: $primary ;
+$border-radius: 0px ;
+
+$theme-colors: (
+  "primary": $primary
+);
+
+// Card
+$card-color:                        $body-color ;
+$card-bg:                           $body-bg ;
+
+@import "~bootstrap/scss/bootstrap";
