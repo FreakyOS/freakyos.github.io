@@ -1,6 +1,6 @@
 import React from "react";
-import { Spinner, Row, Col } from "reactstrap";
-const DownloadPage = React.lazy(() => import('./Components/MobileCard'));
+import { Spinner, Row } from "reactstrap";
+const DownloadPage = React.lazy(() => import('./Pages/Download'));
 
 function Loading() {
   return (
@@ -20,15 +20,11 @@ function Loading() {
 function App() {
   return (
     <React.Suspense fallback={<Loading />}>
-      <Row className="d-flex align-items-center justify-content-center">
-        <h1>
-          Download
-        </h1>        
+      <Row className="d-flex justify-content-center">
+        Downloads<br></br><br></br>
       </Row>
-      <Row className="d-flex justify-content-center align-items-center">
-        <Col md="5">
-          <DownloadPage />
-        </Col>
+      <Row>
+        <DownloadPage />
       </Row>
     </React.Suspense>
   );
