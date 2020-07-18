@@ -14,6 +14,7 @@ export default class Device extends Component{
         }
 
         this.toggle = this.toggle.bind(this);
+        this.datetime = this.datetime.bind(this);
     }
 
     toggle() {
@@ -22,8 +23,17 @@ export default class Device extends Component{
         }));
       }
       
+    datetime(){
+        let unix_timestamp = this.state.details.datetime
+        var date = new Date(unix_timestamp * 1000);
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var formattedDate = day + '/' + month + '/' + year;
+        return formattedDate;
+    }
+
     componentDidMount(){
-        // console.log(this.props.device)
         axios.get(`/${this.props.device.codename}/${this.props.device.codename}.json`).then(
             (response) => {
                 this.setState({
@@ -91,7 +101,7 @@ export default class Device extends Component{
                                     <b>Build Date</b>
                                 </td>
                                 <td>
-                                    xxx
+                                    {this.datetime()}
                                 </td>
                             </tr>
                         </Table>
