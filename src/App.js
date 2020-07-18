@@ -21,9 +21,11 @@ function App() {
   return (
     <React.Suspense fallback={<Loading />}>
       <Row className="d-flex justify-content-center">
-        Downloads<br></br><br></br>
+        <h1>
+          Downloads<br></br><br></br>
+        </h1>
       </Row>
-      <Row>
+      <Row className="d-flex justify-content-center">
         <DownloadPage />
       </Row>
     </React.Suspense>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Card, CardBody, ModalBody, ModalFooter, ModalHeader, CardText, Button, Modal, CardImg, CardFooter} from 'reactstrap';
+import {Card, CardBody, ModalBody, ModalFooter, ModalHeader, Button, Modal, CardImg, CardFooter, Table} from 'reactstrap';
 
 
 export default class Device extends Component{
@@ -23,6 +23,7 @@ export default class Device extends Component{
       }
       
     componentDidMount(){
+        // console.log(this.props.device)
         axios.get(`/${this.props.device.codename}/${this.props.device.codename}.json`).then(
             (response) => {
                 this.setState({
@@ -38,20 +39,62 @@ export default class Device extends Component{
                         <CardImg top width="100%" src={this.props.device.image} alt="Device Image" />
                     </CardBody>
                     <CardFooter><center>{this.props.device.name}</center></CardFooter>
-                    <Modal isOpen={this.state.isOpen} toggle={this.toggle}>
+                <Modal isOpen={this.state.isOpen} toggle={this.toggle} centered responsive>
                     <ModalHeader>
                         {this.props.device.name}
                     </ModalHeader>
                     <ModalBody>
-                        <CardText>
-                            Brand      : {this.props.device.brand}<br></br>
-                            Codename   : {this.props.device.codename}<br></br>
-                            Maintainer : {this.props.device.maintainer}<br></br>
-                            RomVersion : {this.state.details.version}<br></br>
-                            FileName   : {this.state.details.filename}<br></br>
-                            RomSize    : {Math.trunc(this.state.details.size/1048576)} MB<br></br>
-                            Builddate  : xxx<br></br>
-                        </CardText>
+                        <Table borderless={true}>
+                            <tr>
+                                <td>
+                                    <b>Brand</b>
+                                </td>
+                                <td>
+                                    {this.props.device.brand}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Codename</b>
+                                </td>
+                                <td>
+                                    {this.props.device.codename}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Maintainer</b>
+                                </td>
+                                <td>
+                                    {this.props.device.maintainer}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <b>Rom Version</b>
+                                </td>
+                                <td>
+                                    {this.state.details.version}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Rom Size</b>
+                                </td>
+                                <td>
+                                    {Math.trunc(this.state.details.size / 1048576)} MB
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Build Date</b>
+                                </td>
+                                <td>
+                                    xxx
+                                </td>
+                            </tr>
+                        </Table>
                     </ModalBody>
                     <ModalFooter>
                         <Button
@@ -69,12 +112,6 @@ export default class Device extends Component{
                             rel="noopener noreferrer"
                         >
                             Changelog
-                        </Button>
-                        <Button
-                          onClick={this.toggle}
-                          color="danger"  
-                        >
-                            Close
                         </Button>
                     </ModalFooter>
                 </Modal>
