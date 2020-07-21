@@ -6,7 +6,7 @@ import {Card, CardBody, ModalBody, ModalFooter, ModalHeader, Button, Modal, Card
 export default class Device extends Component{
     
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             details: {},
             changelog: `https://raw.githubusercontent.com/FreakyOS/ota_config/still_alive/${this.props.device.codename}/${this.props.device.codename}.txt`,
@@ -33,6 +33,18 @@ export default class Device extends Component{
         return formattedDate;
     }
 
+    formatBytes(bytes, decimals = 2) {
+        if (bytes === 0) return '0 Bytes';
+
+        const k = 1024;
+        const dm = decimals < 0 ? 0 : decimals;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+
     componentDidMount(){
         axios.get(`/${this.props.device.codename}/${this.props.device.codename}.json`).then(
             (response) => {
@@ -40,6 +52,10 @@ export default class Device extends Component{
                   details: response.data.response[0]
                 });
             }
+        ).catch(() => {
+            this.setState({
+                details: {}
+            });}
         )
     }
     render(){
@@ -93,7 +109,7 @@ export default class Device extends Component{
                                     <b>Rom Size</b>
                                 </td>
                                 <td>
-                                    {Math.trunc(this.state.details.size / 1048576)} MB
+                                    {this.formatBytes(this.state.details.size)}
                                 </td>
                             </tr>
                             <tr>
