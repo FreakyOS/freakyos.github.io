@@ -1,6 +1,13 @@
 import React from "react";
 import { Spinner, Row } from "reactstrap";
+import ReactGA from 'react-ga';
 const DownloadPage = React.lazy(() => import('./Pages/Download'));
+
+
+function initializeReactGA() {
+	ReactGA.initialize(process.env.REACT_APP_GA_ID);
+	ReactGA.pageview('/homepage');
+}
 
 function Loading() {
   return (
@@ -18,6 +25,7 @@ function Loading() {
 };
 
 function App() {
+  initializeReactGA();
   return (
     <React.Suspense fallback={<Loading />}>
       <Row className="d-flex justify-content-center">

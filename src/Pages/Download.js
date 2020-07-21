@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
 import { Row } from 'reactstrap';
 import axios from 'axios';
-
+import ReactGA from 'react-ga';
 const MobileCard = React.lazy(() => import('../Components/Device'));
+
+
+function initializeReactGA() {
+	ReactGA.initialize(process.env.REACT_APP_GA_ID);
+	ReactGA.pageview('/downloads');
+}
 
 export default class Download extends Component{
     constructor(props){
@@ -59,6 +65,7 @@ export default class Download extends Component{
     }
 
     render(){
+        initializeReactGA();
         return(
             <div>
                 { this.generatepage() }
