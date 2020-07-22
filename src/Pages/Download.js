@@ -51,12 +51,12 @@ export default class Download extends Component{
         return Object.entries(this.state.groupByBrand).map((brand)=>{
             return(
             <div>
-                <Row>
+                <Row className="d-flex pt-5 align-items-center justify-content-center">
                     <h2>
                         {brand[0]}
                     </h2>
                 </Row>
-                <Row>
+                <Row className="d-flex pt-3 align-items-center justify-content-center">
                     {this.generatebrand(brand[1])}
                 </Row>
             </div>
