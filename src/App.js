@@ -28,11 +28,11 @@ function App() {
   initializeReactGA();
   return (
     <React.Suspense fallback={<Loading />}>
-      <Row className="d-flex align-items-center justify-content-center">
+      {/* <Row className="d-flex align-items-center justify-content-center">
         <h1>
-          Downloads<br></br><br></br>
+          Downloads<br/>
         </h1>
-      </Row>
+      </Row> */}
       <Row className="d-flex align-items-center justify-content-center">
         <DownloadPage />
       </Row>

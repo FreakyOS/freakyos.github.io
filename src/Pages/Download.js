@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Row } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import axios from 'axios';
 import ReactGA from 'react-ga';
 const MobileCard = React.lazy(() => import('../Components/Device'));
@@ -41,7 +41,9 @@ export default class Download extends Component{
         return brandlist.map((device, i) => {
             return(
                 <React.Fragment>
-                    <MobileCard key={i} device={device} />
+                    <Col>
+                        <MobileCard key={i} device={device} />
+                    </Col>
                 </React.Fragment>
             );
         })
@@ -51,12 +53,12 @@ export default class Download extends Component{
         return Object.entries(this.state.groupByBrand).map((brand)=>{
             return(
             <div>
-                <Row className="d-flex pt-5 align-items-center justify-content-center">
+                <Row className="d-flex pt-5 justify-content-center">
                     <h2>
                         {brand[0]}
                     </h2>
                 </Row>
-                <Row className="d-flex pt-3 align-items-center justify-content-center">
+                <Row className="d-flex pt-3">
                     {this.generatebrand(brand[1])}
                 </Row>
             </div>

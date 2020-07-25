@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Card, CardBody, ModalBody, ModalFooter, ModalHeader, Button, Modal, CardImg, CardFooter, Table} from 'reactstrap';
-
+import {Card, CardBody, ModalBody, ModalFooter, ModalHeader, Button, Modal, CardFooter, Table} from 'reactstrap';
 
 export default class Device extends Component{
     
@@ -60,11 +59,13 @@ export default class Device extends Component{
     }
     render(){
         return(
-                <Card className="box"  style={{ width:'15rem' , cursor: 'pointer'}} onClick={this.toggle}>
-                    <CardBody>
-                        <CardImg top width="100%" src={this.props.device.image} alt="Device Image" />
+                <Card className="box"  style={{ cursor: 'pointer'}} onClick={this.toggle}>
+                    <CardBody className="d-flex justify-content-center">
+                        <img style={{ height: "auto", width: "25vw", maxWidth: "100%"}} src={this.props.device.image} alt="Device"/>
                     </CardBody>
-                    <CardFooter><center>{this.props.device.name}</center></CardFooter>
+                <CardFooter className="d-flex justify-content-center">
+                    {this.props.device.name}
+                </CardFooter>
                 <Modal isOpen={this.state.isOpen} toggle={this.toggle} centered responsive>
                     <ModalHeader>
                         {this.props.device.name}
