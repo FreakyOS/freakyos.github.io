@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Card, ModalBody, ModalFooter, ModalHeader, Button, Modal, CardFooter, Table, CardImg } from 'reactstrap';
+import { Card, ModalBody, ModalFooter, ModalHeader, Button, Modal, CardFooter, Table, Container } from 'reactstrap';
 
 export default class Device extends Component {
 
@@ -60,88 +60,92 @@ export default class Device extends Component {
     }
     render() {
         return (
-            <Card className='h-100' style={{ cursor: 'pointer' }} onClick={this.toggle}>
-                <CardImg top width='100%' className='p-1' src={this.props.device.image} alt={this.props.device.codename}></CardImg>
-                <CardFooter className="h-100 justify-content-center">
-                    {this.props.device.name}
-                </CardFooter>
-                <Modal isOpen={this.state.isOpen} toggle={this.toggle} centered responsive>
-                    <ModalHeader>
+            <Container fluid className='h-100 w-100 p-1'>
+                <Card className='p-1 justify-content-center align-items-center' style={{ cursor: 'pointer' }} onClick={this.toggle}>
+                    <img height='200px' className='p-1' style={{ 'max-width': '100%' }} src={this.props.device.image} alt={this.props.device.codename} />
+                    {/* <CardImg top className='p-auto' style={{ 'height': '200px' }} src={this.props.device.image} alt={this.props.device.codename} ></CardImg > */}
+                    <CardFooter className="h-100 w-100 justify-content-center">
                         {this.props.device.name}
-                    </ModalHeader>
-                    <ModalBody>
-                        <Table borderless={true}>
-                            <tr>
-                                <td>
-                                    <b>Brand</b>
-                                </td>
-                                <td>
-                                    {this.props.device.brand}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Codename</b>
-                                </td>
-                                <td>
-                                    {this.props.device.codename}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Maintainer</b>
-                                </td>
-                                <td>
-                                    {this.props.device.maintainer}
-                                </td>
-                            </tr>
+                    </CardFooter>
+                    <Modal isOpen={this.state.isOpen} toggle={this.toggle} centered responsive className='d-none'>
+                        <ModalHeader>
+                            {this.props.device.name}
+                        </ModalHeader>
+                        <ModalBody>
+                            <Table borderless={true}>
+                                <tr>
+                                    <td>
+                                        <b>Brand</b>
+                                    </td>
+                                    <td>
+                                        {this.props.device.brand}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Codename</b>
+                                    </td>
+                                    <td>
+                                        {this.props.device.codename}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Maintainer</b>
+                                    </td>
+                                    <td>
+                                        {this.props.device.maintainer}
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td>
-                                    <b>Rom Version</b>
-                                </td>
-                                <td>
-                                    {this.state.details.version}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Rom Size</b>
-                                </td>
-                                <td>
-                                    {this.formatBytes(this.state.details.size)}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Build Date</b>
-                                </td>
-                                <td>
-                                    {this.datetime()}
-                                </td>
-                            </tr>
-                        </Table>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button
-                            href={this.state.details.url}
-                            target="_blank"
-                            color="primary"
-                            rel="noopener noreferrer"
-                        >
-                            Download
+                                <tr>
+                                    <td>
+                                        <b>Rom Version</b>
+                                    </td>
+                                    <td>
+                                        {this.state.details.version}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Rom Size</b>
+                                    </td>
+                                    <td>
+                                        {this.formatBytes(this.state.details.size)}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Build Date</b>
+                                    </td>
+                                    <td>
+                                        {this.datetime()}
+                                    </td>
+                                </tr>
+                            </Table>
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button
+                                href={this.state.details.url}
+                                target="_blank"
+                                color="primary"
+                                rel="noopener noreferrer"
+                            >
+                                Download
                         </Button>
-                        <Button
-                            href={this.state.changelog}
-                            target="_blank"
-                            color="info"
-                            rel="noopener noreferrer"
-                        >
-                            Changelog
+                            <Button
+                                href={this.state.changelog}
+                                target="_blank"
+                                color="info"
+                                rel="noopener noreferrer"
+                            >
+                                Changelog
                         </Button>
-                    </ModalFooter>
-                </Modal>
-            </Card>
+                        </ModalFooter>
+                    </Modal>
+                </Card >
+            </Container>
+
         );
     }
 }

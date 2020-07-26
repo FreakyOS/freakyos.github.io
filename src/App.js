@@ -6,10 +6,10 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-const DownloadPage = React.lazy(() => import('./Pages/Download'));
-const HomePage = React.lazy(() => import('./Pages/Home'));
-const Header = React.lazy(() => import('./Components/Header'));
-const Footer = React.lazy(() => import('./Components/Footer'));
+const DownloadPage = React.lazy(() => import('pages/Download'));
+const HomePage = React.lazy(() => import('pages/Home'));
+const Header = React.lazy(() => import('components/Header'));
+const Footer = React.lazy(() => import('components/Footer'));
 
 function initializeReactGA() {
   ReactGA.initialize(process.env.REACT_APP_GA_ID);
