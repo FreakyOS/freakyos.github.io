@@ -2,10 +2,11 @@ import React from "react";
 import { Spinner } from "reactstrap";
 import ReactGA from 'react-ga';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 const DownloadPage = React.lazy(() => import('pages/Download'));
 const HomePage = React.lazy(() => import('pages/Home'));
 const Header = React.lazy(() => import('components/Header'));
@@ -36,7 +37,7 @@ function App() {
   return (
     <React.Suspense fallback={<Loading />}>
       <Header />
-      <Router>
+      <Router history={createBrowserHistory()}>
         <Switch>
           <Route path="/downloads">
             <DownloadPage />

@@ -38,13 +38,13 @@ export default class Navigation extends Component {
                 <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/downloads">Downloads</NavLink>
+                <NavLink href="/#/downloads">Downloads</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/team">Team</NavLink>
+                <NavLink href="/#/team">Team</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/links">Links</NavLink>
+                <NavLink href="/#/links">Links</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
