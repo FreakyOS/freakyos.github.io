@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
-import {Card, CardBody, ModalBody, ModalFooter, ModalHeader, Button, Modal, CardFooter, Table} from 'reactstrap';
+import { Card, ModalBody, ModalFooter, ModalHeader, Button, Modal, CardFooter, Table, CardImg } from 'reactstrap';
 
-export default class Device extends Component{
-    
-    constructor(props){
+export default class Device extends Component {
+
+    constructor(props) {
         super(props);
         this.state = {
             details: {},
             changelog: `https://raw.githubusercontent.com/FreakyOS/ota_config/still_alive/${this.props.device.codename}/${this.props.device.codename}.txt`,
-            isOpen : false,
+            isOpen: false,
         }
 
         this.toggle = this.toggle.bind(this);
@@ -18,11 +18,11 @@ export default class Device extends Component{
 
     toggle() {
         this.setState(state => ({
-          isOpen: !state.isOpen
+            isOpen: !state.isOpen
         }));
-      }
-      
-    datetime(){
+    }
+
+    datetime() {
         let unix_timestamp = this.state.details.datetime
         var date = new Date(unix_timestamp * 1000);
         var year = date.getFullYear();
@@ -44,26 +44,25 @@ export default class Device extends Component{
         return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
     }
 
-    componentDidMount(){
+    componentDidMount() {
         axios.get(`/${this.props.device.codename}/${this.props.device.codename}.json`).then(
             (response) => {
                 this.setState({
-                  details: response.data.response[0]
+                    details: response.data.response[0]
                 });
             }
         ).catch(() => {
             this.setState({
                 details: {}
-            });}
+            });
+        }
         )
     }
-    render(){
-        return(
-                <Card className="box"  style={{ cursor: 'pointer'}} onClick={this.toggle}>
-                    <CardBody className="d-flex justify-content-center">
-                        <img style={{ height: "auto", width: "25vw", maxWidth: "100%"}} src={this.props.device.image} alt="Device"/>
-                    </CardBody>
-                <CardFooter className="d-flex justify-content-center">
+    render() {
+        return (
+            <Card className='h-100' style={{ cursor: 'pointer' }} onClick={this.toggle}>
+                <CardImg top width='100%' className='p-1' src={this.props.device.image} alt={this.props.device.codename}></CardImg>
+                <CardFooter className="h-100 justify-content-center">
                     {this.props.device.name}
                 </CardFooter>
                 <Modal isOpen={this.state.isOpen} toggle={this.toggle} centered responsive>
@@ -142,7 +141,7 @@ export default class Device extends Component{
                         </Button>
                     </ModalFooter>
                 </Modal>
-                </Card>
+            </Card>
         );
     }
 }

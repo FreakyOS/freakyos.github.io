@@ -1,12 +1,19 @@
 import React from "react";
-import { Spinner, Row } from "reactstrap";
+import { Spinner } from "reactstrap";
 import ReactGA from 'react-ga';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 const DownloadPage = React.lazy(() => import('./Pages/Download'));
-
+const HomePage = React.lazy(() => import('./Pages/Home'));
+const Header = React.lazy(() => import('./Components/Header'));
+const Footer = React.lazy(() => import('./Components/Footer'));
 
 function initializeReactGA() {
-	ReactGA.initialize(process.env.REACT_APP_GA_ID);
-	ReactGA.pageview('/homepage');
+  ReactGA.initialize(process.env.REACT_APP_GA_ID);
+  ReactGA.pageview('/homepage');
 }
 
 function Loading() {
@@ -28,14 +35,18 @@ function App() {
   initializeReactGA();
   return (
     <React.Suspense fallback={<Loading />}>
-      {/* <Row className="d-flex align-items-center justify-content-center">
-        <h1>
-          Downloads<br/>
-        </h1>
-      </Row> */}
-      <Row className="d-flex align-items-center justify-content-center">
-        <DownloadPage />
-      </Row>
+      <Header />
+      <Router>
+        <Switch>
+          <Route path="/downloads">
+            <DownloadPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
+      <Footer />
     </React.Suspense>
   );
 }
