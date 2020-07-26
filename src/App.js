@@ -20,14 +20,9 @@ function initializeReactGA() {
 function Loading() {
   return (
     <React.Fragment>
-      <Spinner type="grow" color="primary" />
-      <Spinner type="grow" color="secondary" />
-      <Spinner type="grow" color="success" />
-      <Spinner type="grow" color="danger" />
-      <Spinner type="grow" color="warning" />
-      <Spinner type="grow" color="info" />
-      <Spinner type="grow" color="light" />
-      <Spinner type="grow" color="dark" />
+      <div className='h-100  d-flex flex-column align-items-center justify-content-center'>
+        <Spinner type="grow" color="primary" />
+      </div>
     </React.Fragment>
   );
 };
