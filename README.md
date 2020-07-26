@@ -1,5 +1,5 @@
 # FreakySite
-
+[![Build Status](https://travis-ci.com/FreakyOS/freakyos.github.io.svg?branch=still_alive)](https://travis-ci.com/FreakyOS/freakyos.github.io)
 ## Usage
 
 In the project directory, you can run:
