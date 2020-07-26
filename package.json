@@ -2,7 +2,6 @@
   "name": "freakysite",
   "version": "0.1.0",
   "private": false,
-  "proxy": "https://raw.githubusercontent.com/FreakyOS/ota_config/still_alive/",
   "homepage": "https://freakyos.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

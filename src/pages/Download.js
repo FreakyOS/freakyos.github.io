@@ -30,18 +30,22 @@ export default class Download extends Component {
     }
 
     componentDidMount() {
-        axios.get('/devices.json').then(response => {
+        axios
+          .get(
+            "https://raw.githubusercontent.com/FreakyOS/ota_config/still_alive/devices.json"
+          )
+          .then((response) => {
             this.setState({
-                groupByBrand: this.groupBy(response.data.response, 'brand'),
-            })
-        })
+              groupByBrand: this.groupBy(response.data.response, "brand"),
+            });
+          });
     }
 
     generatebrand(brandlist) {
         return brandlist.map((device, i) => {
             return (
                 <React.Fragment>
-                    <Col xs='6' sm='4' md='3' lg='2' className='p-0' style={{ 'max-height': '340px', width: 'auto' }}>
+                    <Col xs='6' sm='4' md='3' lg='2' className='p-0' style={{ maxHeight: '340px', width: 'auto' }}>
                         <MobileCard key={i} device={device} />
                     </Col>
                 </React.Fragment>
