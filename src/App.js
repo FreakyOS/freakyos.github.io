@@ -2,10 +2,11 @@ import React from "react";
 import { Spinner } from "reactstrap";
 import ReactGA from 'react-ga';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 const DownloadPage = React.lazy(() => import('pages/Download'));
 const HomePage = React.lazy(() => import('pages/Home'));
 const Header = React.lazy(() => import('components/Header'));
@@ -19,14 +20,9 @@ function initializeReactGA() {
 function Loading() {
   return (
     <React.Fragment>
-      <Spinner type="grow" color="primary" />
-      <Spinner type="grow" color="secondary" />
-      <Spinner type="grow" color="success" />
-      <Spinner type="grow" color="danger" />
-      <Spinner type="grow" color="warning" />
-      <Spinner type="grow" color="info" />
-      <Spinner type="grow" color="light" />
-      <Spinner type="grow" color="dark" />
+      <div className='h-100  d-flex flex-column align-items-center justify-content-center'>
+        <Spinner type="grow" color="primary" />
+      </div>
     </React.Fragment>
   );
 };
@@ -36,7 +32,7 @@ function App() {
   return (
     <React.Suspense fallback={<Loading />}>
       <Header />
-      <Router>
+      <Router history={createBrowserHistory()}>
         <Switch>
           <Route path="/downloads">
             <DownloadPage />
