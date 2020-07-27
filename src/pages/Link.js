@@ -11,8 +11,9 @@ export default class Links extends Component{
     render(){
         initializeReactGA();
         return(
-            <React.Fragment>
-                <Jumbotron fluid>
+            <React.Fragment >
+                <div style={{paddingTop:'60px'}}>
+                <Jumbotron fluid >
                     <Container fluid className="">
                         <ListGroup flush>
                             <ListGroupItem>
@@ -54,6 +55,7 @@ export default class Links extends Component{
                         </ListGroup>
                     </Container>
                 </Jumbotron>
+                </div>
             </React.Fragment>
         );
     }
