@@ -52,6 +52,18 @@ export default class Links extends Component{
                                     </ListGroup>
                                 </ListGroupItemText>
                             </ListGroupItem>
+                            <ListGroupItem>
+                                <ListGroupItemHeading>
+                                    Donation
+                                </ListGroupItemHeading>
+                                <ListGroupItemText>
+                                    <ListGroup flush>
+                                        <ListGroupItem tag='a' href="https://paypal.me/bunnyy95" action>
+                                            PayPal
+                                        </ListGroupItem>
+                                    </ListGroup>
+                                </ListGroupItemText>
+                            </ListGroupItem>
                         </ListGroup>
                     </Container>
                 </Jumbotron>
