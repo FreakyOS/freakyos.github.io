@@ -12,6 +12,7 @@ const HomePage = React.lazy(() => import('pages/Home'));
 const Header = React.lazy(() => import('components/Header'));
 const Footer = React.lazy(() => import('components/Footer'));
 const LinksPage = React.lazy(()=> import('pages/Link'));
+const TeamPage = React.lazy(() => import('pages/Team'));
 
 function initializeReactGA() {
   ReactGA.initialize(process.env.REACT_APP_GA_ID);
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path="/links">
             <LinksPage />
+          </Route>
+          <Route path="/team">
+            <TeamPage />
           </Route>
           <Route path="/">
             <HomePage />
