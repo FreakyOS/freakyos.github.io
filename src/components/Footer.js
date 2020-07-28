@@ -10,7 +10,7 @@ export default class Footer extends Component {
           <p style={{ float: "left" }}>
             Made with ❤ in{" "}
             <span>
-              <Icon icon={flagForIndia} />
+              <Icon icon={flagForIndia} width="2rem" height="2rem" />
             </span>
           </p>
           <p style={{ float: "right" }}>Powered by &copy; FreakyOS</p>
