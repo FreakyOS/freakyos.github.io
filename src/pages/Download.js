@@ -31,14 +31,14 @@ export default class Download extends Component {
 
     componentDidMount() {
         axios
-          .get(
-            "https://raw.githubusercontent.com/FreakyOS/ota_config/still_alive/devices.json"
-          )
-          .then((response) => {
-            this.setState({
-              groupByBrand: this.groupBy(response.data.response, "brand"),
+            .get(
+                "https://raw.githubusercontent.com/FreakyOS/ota_config/still_alive/devices.json"
+            )
+            .then((response) => {
+                this.setState({
+                    groupByBrand: this.groupBy(response.data.response, "brand"),
+                });
             });
-          });
     }
 
     generatebrand(brandlist) {
@@ -57,7 +57,7 @@ export default class Download extends Component {
         return Object.entries(this.state.groupByBrand).map((brand) => {
             return (
                 <React.Fragment>
-                    <Row className="mx-auto justify-content-center">
+                    <Row className="mx-auto p-3 justify-content-center">
                         <h2>
                             {brand[0]}
                         </h2>
@@ -73,8 +73,8 @@ export default class Download extends Component {
     render() {
         initializeReactGA();
         return (
-            <React.Fragment>
-                <Container style={{paddingTop:'60px'}}>
+            <React.Fragment className='p-5'>
+                <Container className='w-100' style={{ paddingTop: '60px' }}>
                     {this.generatepage()}
                 </Container>
             </React.Fragment>
