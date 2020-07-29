@@ -1,9 +1,10 @@
-# freakyos.github.io
+# freakyos.github.io [![Build Status](https://travis-ci.com/FreakyOS/freakyos.github.io.svg?branch=still_alive)](https://travis-ci.com/FreakyOS/freakyos.github.io)
+
 <div align="center">
   <img src="assets/freakyos.png?raw=true" width="200" height="200" />
 </div>
 
-[![Build Status](https://travis-ci.com/FreakyOS/freakyos.github.io.svg?branch=still_alive)](https://travis-ci.com/FreakyOS/freakyos.github.io)
+
 
 ## Usage
 
