@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@iconify/icons-emojione-v1": "^1.0.7",
+    "@iconify/icons-il": "^1.0.3",
     "@iconify/icons-la": "^1.0.0",
     "@iconify/icons-logos": "^1.0.12",
     "@iconify/icons-simple-icons": "^1.0.43",
