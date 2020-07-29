@@ -11,7 +11,7 @@ const DownloadPage = React.lazy(() => import('pages/Download'));
 const HomePage = React.lazy(() => import('pages/Home'));
 const Header = React.lazy(() => import('components/Header'));
 const Footer = React.lazy(() => import('components/Footer'));
-const LinksPage = React.lazy(()=> import('pages/Link'));
+const LinksPage = React.lazy(() => import('pages/Link'));
 const TeamPage = React.lazy(() => import('pages/Team'));
 
 function initializeReactGA() {
@@ -22,7 +22,7 @@ function initializeReactGA() {
 function Loading() {
   return (
     <React.Fragment>
-      <div className='h-100  d-flex flex-column align-items-center justify-content-center'>
+      <div className='h-100 d-flex flex-column align-items-center justify-content-center'>
         <Spinner type="grow" color="primary" />
       </div>
     </React.Fragment>

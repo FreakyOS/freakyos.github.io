@@ -17,7 +17,7 @@ export default class Home extends Component {
   render() {
     initializeReactGA();
     return (<React.Fragment>
-      <div class='w-100' style={{paddingTop:'60px'}}>
+      <div class='w-100' style={{ paddingTop: '60px' }}>
         <Jumbotron fluid>
           <Container fluid className='w-100'>
             <div class='d-flex flex-column align-items-center'>
@@ -27,7 +27,6 @@ export default class Home extends Component {
           </Container>
         </Jumbotron>
       </div>
-
     </React.Fragment>)
   }
 }
