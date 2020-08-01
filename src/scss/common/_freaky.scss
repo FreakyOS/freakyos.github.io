@@ -16,6 +16,28 @@
   position: absolute;
 }
 
+.freaky-navbar-nav {
+  @extend .navbar-nav;
+  @extend .d-flex;
+  @extend .flex-row;
+  @extend .align-items-center;
+  @extend .justify-content-center;
+  span {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .align-self-center;
+    @extend .justify-content-center;
+    color: $gray-600;
+  }
+}
+.freaky-nav-item {
+  @extend .nav-item;
+  @extend .mx-1;
+  &:hover {
+    background-color: $gray-900;
+    @extend .rounded;
+  }
+}
 .link-group {
   background-color: $secondary;
 }
