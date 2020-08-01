@@ -32,11 +32,11 @@ export default class Navigation extends Component {
               </div>
               <span>&middot;</span>
               <div className='freaky-nav-item'>
-                <a className='nav-link' href='#/team'>Team</a>
+                <a className='nav-link' href='#/downloads'>Downloads</a>
               </div>
               <span>&middot;</span>
               <div className='freaky-nav-item'>
-                <a className='nav-link' href='#/downloads'>Downloads</a>
+                <a className='nav-link' href='#/team'>Team</a>
               </div>
               <span>&middot;</span>
               <div className='freaky-nav-item'>
