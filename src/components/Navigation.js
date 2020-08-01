@@ -29,9 +29,9 @@ export default class Navigation extends Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="sm" fixed="top" className='justify-content-center' >
-          <NavbarBrand href="/" className='p-0'><img src={logo} alt='FreakyOS' style={{ width: "44px", height: "44px" }} /></NavbarBrand>
+      <div className='m-auto' style={{ height: "44px" }}>
+        <Navbar color="light" light expand="sm" fixed="top" className='justify-content-center' style={{ height: "44px" }}>
+          <NavbarBrand href="/" className='p-0'><img src={logo} alt='FreakyOS' style={{ width: "40px", height: "40px" }} /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} className='ml-auto' />
           <Collapse isOpen={this.state.isOpen} onClick={this.toggle} navbar className='justify-content-center'>
             <Nav className="p-0 w-75 justify-content-around" navbar>

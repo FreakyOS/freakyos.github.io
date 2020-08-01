@@ -6,14 +6,15 @@ export default class Footer extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="freaky-footer p-3 d-flex flex-column align-items-center justify-content-center">
-          <p>Powered by &copy; FreakyOS</p>
-          <p>
-            Made with ❤ from {" "}
-            <span>
-              <Icon icon={flagForIndia} width="2rem" height="2rem" />
-            </span>
-          </p>
+        <div className="footer fixed-bottom freaky-footer">
+          <div className='container text-muted d-flex flex-column justify-content-center align-items-center'>
+            <p>Made with ❤ from {" "}
+              <span>
+                <Icon icon={flagForIndia} width="2rem" height="2rem" />
+              </span>
+              <span>{" "} | Powered by &copy; FreakyOS</span>
+            </p>
+          </div>
         </div>
       </React.Fragment>
     );
