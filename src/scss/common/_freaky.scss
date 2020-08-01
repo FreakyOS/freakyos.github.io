@@ -16,6 +16,48 @@
   position: absolute;
 }
 
+.freaky-card-group {
+  @extend .rounded;
+  @extend .m-2;
+  @extend .p-2;
+  @extend .shadow-sm;
+  background-color: $secondary;
+}
+
+.freaky-card {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+  @extend .m-1;
+  @extend .p-1;
+  @extend .h-100;
+  @extend .rounded;
+  @extend .shadow-sm;
+  background-color: $gray-200;
+  cursor: "pointer";
+
+  &:hover {
+    @extend .shadow;
+  }
+
+  img {
+    @extend .p-1;
+    width: "auto";
+    max-width: 100%;
+    max-height: 128px;
+  }
+
+  .freaky-card-footer {
+    @extend .h-100;
+    @extend .w-100;
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .justify-content-center;
+    @extend .align-items-center;
+  }
+}
+
 .freaky-navbar-nav {
   @extend .navbar-nav;
   @extend .d-flex;
@@ -38,8 +80,13 @@
     @extend .rounded;
   }
 }
+
 .link-group {
   background-color: $secondary;
+  @extend .shadow;
+  &:hover {
+    @extend .shadow-lg;
+  }
 }
 .link-container {
   min-width: 32px;

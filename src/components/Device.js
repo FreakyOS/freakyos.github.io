@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Card, ModalBody, ModalFooter, ModalHeader, Button, Modal, CardFooter, Table, Container } from 'reactstrap';
+import { ModalBody, ModalFooter, ModalHeader, Button, Modal, Table, Container } from 'reactstrap';
 
 export default class Device extends Component {
 
@@ -63,21 +63,11 @@ export default class Device extends Component {
   render() {
     return (
       <Container fluid className="h-100 w-100 p-1">
-        <Card
-          className="p-1 h-100 justify-content-center align-items-center"
-          style={{ cursor: "pointer" }}
-          onClick={this.toggle}
-        >
-          <img
-            className="p-1"
-            width='auto'
-            style={{ maxWidth: "100%", maxHeight: "128px" }}
-            src={this.props.device.image}
-            alt={this.props.device.codename}
-          />
-          <CardFooter fluid className="h-100 w-100 justify-content-center">
+        <div className="freaky-card" onClick={this.toggle}>
+          <img src={this.props.device.image} alt={this.props.device.codename} />
+          <div className="freaky-card-footer">
             {this.props.device.name}
-          </CardFooter>
+          </div>
           <Modal
             isOpen={this.state.isOpen}
             toggle={this.toggle}
@@ -146,7 +136,7 @@ export default class Device extends Component {
                   </Button>
             </ModalFooter>
           </Modal>
-        </Card>
+        </div>
       </Container>
     );
   }
