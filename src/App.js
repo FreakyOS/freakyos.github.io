@@ -34,22 +34,24 @@ function App() {
   return (
     <React.Suspense fallback={<Loading />}>
       <Header />
-      <Router history={createBrowserHistory()}>
-        <Switch>
-          <Route path="/downloads">
-            <DownloadPage />
-          </Route>
-          <Route path="/links">
-            <LinksPage />
-          </Route>
-          <Route path="/team">
-            <TeamPage />
-          </Route>
-          <Route path="/">
-            <HomePage />
-          </Route>
-        </Switch>
-      </Router>
+      <main role='main' className='w-100' style={{ paddingBottom: '60px' }}>
+        <Router history={createBrowserHistory()}>
+          <Switch>
+            <Route path="/downloads">
+              <DownloadPage />
+            </Route>
+            <Route path="/links">
+              <LinksPage />
+            </Route>
+            <Route path="/team">
+              <TeamPage />
+            </Route>
+            <Route path="/">
+              <HomePage />
+            </Route>
+          </Switch>
+        </Router>
+      </main>
       <Footer />
     </React.Suspense>
   );
