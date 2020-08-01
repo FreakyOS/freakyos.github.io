@@ -76,7 +76,7 @@ export default class Teams extends Component {
     initializeReactGA();
     return (
       <React.Fragment>
-        <Container style={{ paddingTop: "60px" }}>
+        <Container fluid>
           {this.generateTeam()}
           {this.generateMaintainers()}
         </Container>
