@@ -8,11 +8,11 @@ export default class Footer extends Component {
       <React.Fragment>
         <div className="footer fixed-bottom freaky-footer">
           <div className='container text-muted d-flex flex-column justify-content-center align-items-center'>
-            <p>Made with ❤ from {" "}
+            <p>Made with ❤ in {" "}
               <span>
                 <Icon icon={flagForIndia} width="2rem" height="2rem" />
               </span>
-              <span>{" "} | Powered by &copy; FreakyOS</span>
+              <span>{" "} | Powered by &copy; TheFreaks</span>
             </p>
           </div>
         </div>
