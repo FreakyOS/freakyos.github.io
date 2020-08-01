@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
-import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Jumbotron, Container } from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 import { Icon } from "@iconify/react";
 import jenkinsIcon from '@iconify/icons-logos/jenkins';
 import paypalIcon from '@iconify/icons-logos/paypal';
@@ -12,170 +12,76 @@ import twitterIcon from "@iconify/icons-logos/twitter";
 
 function initializeReactGA() {
     ReactGA.initialize(process.env.REACT_APP_GA_ID);
-    ReactGA.pageview('/downloads');
+    ReactGA.pageview('/links');
 }
 
-export default class Links extends Component{
-    render(){
+export default class Links extends Component {
+    render() {
         initializeReactGA();
         return (
-          <React.Fragment>
-            <div style={{ paddingTop: "60px" }}>
-              <Jumbotron fluid>
-                <Container fluid className="">
-                  <ListGroup flush>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Development</ListGroupItemHeading>
-                      <ListGroupItemText>
-                        <ListGroup flush>
-                          <ListGroupItem
-                            tag="a"
-                            href="https://github.com/freakyos"
-                            action
-                          >
-                            <h6>
-                              <Icon
-                                icon={githubOctocat}
-                                width="2.5rem"
-                                height="2.5rem"
-                              />
-                              &nbsp; GitHub
-                            </h6>
-                          </ListGroupItem>
-                          <ListGroupItem
-                            tag="a"
-                            href="http://freakyos.xyz"
-                            action
-                          >
-                            <h6>
-                              <Icon
-                                icon={gerritIcon}
-                                width="2.5rem"
-                                height="2.5rem"
-                              />
-                              &nbsp; Gerrit
-                            </h6>
-                          </ListGroupItem>
-                          <ListGroupItem
-                            tag="a"
-                            href="http://jenkins.freakyos.xyz"
-                            action
-                          >
-                            <h6>
-                              <Icon
-                                icon={jenkinsIcon}
-                                width="2.5rem"
-                                height="2.5rem"
-                              />
-                              &nbsp; Jenkins
-                            </h6>
-                          </ListGroupItem>
-                        </ListGroup>
-                      </ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Media</ListGroupItemHeading>
-                      <ListGroupItemText>
-                        <ListGroup flush>
-                          <ListGroupItem
-                            tag="a"
-                            href="https://t.me/freakyos"
-                            action
-                          >
-                            <h6>
-                              <Icon
-                                icon={telegramIcon}
-                                width="2rem"
-                                height="2rem"
-                              />
-                              &nbsp; FreakyOS Townhall
-                            </h6>
-                          </ListGroupItem>
-                          <ListGroupItem
-                            tag="a"
-                            href="https://t.me/freakyos_bulletin"
-                            action
-                          >
-                            <h6>
-                              <Icon
-                                icon={telegramIcon}
-                                width="2rem"
-                                height="2rem"
-                              />
-                              &nbsp; FreakyOS Bulletin
-                            </h6>
-                          </ListGroupItem>
-                          <ListGroupItem
-                            tag="a"
-                            href="http://t.me/FreakyOSGraphics"
-                            action
-                          >
-                            <h6>
-                              <Icon
-                                icon={telegramIcon}
-                                width="2rem"
-                                height="2rem"
-                              />
-                              &nbsp; FreakyOS Graphics
-                            </h6>
-                          </ListGroupItem>
-                          <ListGroupItem
-                            tag="a"
-                            href="https://twitter.com/Freaky_OS?s=09"
-                            action
-                          >
-                            <h6>
-                              <Icon
-                                icon={twitterIcon}
-                                width="2rem"
-                                height="2rem"
-                              />
-                              &nbsp; Twitter
-                            </h6>
-                          </ListGroupItem>
-                          <ListGroupItem
-                            tag="a"
-                            href="https://instagram.com/freaky_os?igshid=1bxtruoobuagb"
-                            action
-                          >
-                            <h6>
-                              <Icon
-                                icon={instagramIcon}
-                                width="2rem"
-                                height="2rem"
-                              />
-                              &nbsp; Instagram
-                            </h6>
-                          </ListGroupItem>
-                        </ListGroup>
-                      </ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Donation</ListGroupItemHeading>
-                      <ListGroupItemText>
-                        <ListGroup flush>
-                          <ListGroupItem
-                            tag="a"
-                            href="https://paypal.me/bunnyy95"
-                            action
-                          >
-                            <h5>
-                              <Icon
-                                icon={paypalIcon}
-                                width="2rem"
-                                height="2rem"
-                              />
-                              &nbsp; PayPal
-                            </h5>
-                          </ListGroupItem>
-                        </ListGroup>
-                      </ListGroupItemText>
-                    </ListGroupItem>
-                  </ListGroup>
+            <React.Fragment >
+                <Container fluid className='m-1 d-flex flex-row align-items-center justify-content-center'>
+                    <Row className='d-flex align-items-center justify-content-center'>
+                        <Col xs='10' sm='5' md='4' xl='4' className='m-1 link-group rounded d-flex flex-column align-items-center justify-content-center'>
+                            <span className='m-2' >Contribute</span>
+                            <div className='m-1 d-flex justify-content-center'>
+                                <div className='m-2 link-container d-flex flex-column justify-content-center align-items-center'>
+                                    <a href='https://github.com/freakyos' rel="noopener noreferrer" target='_blank'>
+                                        <Icon icon={githubOctocat} width="2.5em" height="2.5em" />
+                                    </a>
+                                    <span className='link-name'>GitHub</span>
+                                </div>
+                                <div className='m-2 link-container d-flex flex-column justify-content-center align-items-center'>
+                                    <a href='http://freakyos.xyz' rel="noopener noreferrer" target='_blank'>
+                                        <Icon icon={gerritIcon} width="2.5rem" height="2.5rem" />
+                                    </a>
+                                    <span className='link-name'>Gerrit</span>
+                                </div>
+                                <div className='m-2 link-container d-flex flex-column justify-content-center align-items-center'>
+                                    <a href='http://jenkins.freakyos.xyz' rel="noopener noreferrer" target='_blank'>
+                                        <Icon icon={jenkinsIcon} width="2.5rem" height="2.5rem" />
+                                    </a>
+                                    <span className='link-name'>Jenkins</span>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs='10' sm='5' md='4' xl='4' className='m-1 link-group rounded d-flex flex-column align-items-center justify-content-center'>
+                            <span className='m-2' >Talk to us!</span>
+                            <div className='m-1 d-flex justify-content-center'>
+                                <div className='m-2 link-container d-flex flex-column justify-content-center align-items-center'>
+                                    <a className='' href='https://t.me/freakyos' rel="noopener noreferrer" target='_blank'>
+                                        <Icon icon={telegramIcon} width="2.5em" height="2.5em" />
+                                    </a>
+                                    <span className='link-name'>Townhall</span>
+                                </div>
+                                <div className='m-2 link-container d-flex flex-column justify-content-center align-items-center'>
+                                    <a href='https://t.me/freakyos_bulletin' rel="noopener noreferrer" target='_blank'>
+                                        <Icon icon={telegramIcon} width="2.5rem" height="2.5rem" />
+                                    </a>
+                                    <span className='link-name'>Bulletin</span>
+                                </div>
+                                <div className='m-2 link-container d-flex flex-column justify-content-center align-items-center'>
+                                    <a href='http://t.me/FreakyOSGraphics' rel="noopener noreferrer" target='_blank'>
+                                        <Icon icon={telegramIcon} width="2.5rem" height="2.5rem" />
+                                    </a>
+                                    <span className='link-name'>Graphics!</span>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs='10' sm='5' md='4' xl='3' className='link-group m-1 rounded d-flex flex-column align-items-center justify-content-center'>
+                            <span className='m-2' >Support us :)</span>
+                            <div className='m-1 d-flex justify-content-center'>
+                                <div className='m-2 link-container d-flex flex-column justify-content-center align-items-center'>
+                                    <a className='' href='https://paypal.me/bunnyy95' rel="noopener noreferrer" target='_blank'>
+                                        <Icon icon={paypalIcon} width="2.5em" height="2.5em" />
+                                    </a>
+                                    <span className='link-name'>Paypal</span>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
                 </Container>
-              </Jumbotron>
-            </div>
-          </React.Fragment>
+            </React.Fragment >
         );
     }
 }
