@@ -73,8 +73,8 @@ export default class Download extends Component {
     render() {
         initializeReactGA();
         return (
-            <React.Fragment className='p-5'>
-                <Container className='w-100' style={{ paddingTop: '60px' }}>
+            <React.Fragment>
+                <Container fluid>
                     {this.generatepage()}
                 </Container>
             </React.Fragment>

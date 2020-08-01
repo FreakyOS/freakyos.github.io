@@ -1,3 +1,27 @@
 .freaky-footer {
   background-color: $gray-200;
+  padding: 8px;
+  max-height: 44px;
+  font-size: 0.8em;
+}
+.freaky-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.freaky-banner img {
+  position: absolute;
+}
+
+.link-group {
+  background-color: $secondary;
+}
+.link-container {
+  min-width: 32px;
+}
+.link-name {
+  font-size: 0.8rem;
 }
