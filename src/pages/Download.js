@@ -56,8 +56,8 @@ export default class Download extends Component {
     generatepage() {
         return Object.entries(this.state.groupByBrand).map((brand) => {
             return (
-                <React.Fragment>
-                    <Row className="mx-auto p-3 justify-content-center">
+                <div className='freaky-card-group'>
+                    <Row className="mx-auto p-1 justify-content-center">
                         <h2>
                             {brand[0]}
                         </h2>
@@ -65,7 +65,7 @@ export default class Download extends Component {
                     <Row className="mx-auto justify-content-center">
                         {this.generatebrand(brand[1])}
                     </Row>
-                </React.Fragment>
+                </div>
             );
         });
     }
@@ -74,7 +74,7 @@ export default class Download extends Component {
         initializeReactGA();
         return (
             <React.Fragment>
-                <Container fluid>
+                <Container>
                     {this.generatepage()}
                 </Container>
             </React.Fragment>
