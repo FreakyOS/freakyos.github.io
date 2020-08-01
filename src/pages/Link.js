@@ -20,7 +20,7 @@ export default class Links extends Component {
     initializeReactGA();
     return (
       <React.Fragment >
-        <Container fluid className='m-1 d-flex flex-row align-items-center justify-content-center'>
+        <Container fluid className='m-1 d-flex flex-column align-items-center justify-content-center'>
           <Row className='d-flex align-items-center justify-content-center'>
             <Col xs='10' sm='5' md='4' xl='4' className='m-1 link-group rounded d-flex flex-column align-items-center justify-content-center'>
               <span className='m-2' >Contribute</span>
@@ -66,6 +66,11 @@ export default class Links extends Component {
                   </a>
                   <span className='link-name'>Graphics!</span>
                 </div>
+              </div>
+            </Col>
+            <Col xs='10' sm='5' md='4' xl='4' className='m-1 link-group rounded d-flex flex-column align-items-center justify-content-center'>
+              <span className='m-2' >Our Social!</span>
+              <div className='m-1 d-flex justify-content-center'>
                 <div className='m-2 link-container d-flex flex-column justify-content-center align-items-center'>
                   <a href='https://instagram.com/freaky_os?igshid=1bxtruoobuagb' rel="noopener noreferrer" target='_blank'>
                     <Icon icon={instagramIcon} width="2.5rem" height="2.5rem" />
