@@ -1,13 +1,4 @@
 import React, { Component } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap';
 import logo from 'assets/images/logo.png';
 
 export default class Navigation extends Component {
@@ -29,28 +20,32 @@ export default class Navigation extends Component {
   }
   render() {
     return (
-      <div className='m-auto' style={{ height: "44px" }}>
-        <Navbar color="light" light expand="sm" fixed="top" className='justify-content-center' style={{ height: "44px" }}>
-          <NavbarBrand href="/" className='p-0'><img src={logo} alt='FreakyOS' style={{ width: "40px", height: "40px" }} /></NavbarBrand>
-          <NavbarToggler onClick={this.toggle} className='ml-auto' />
-          <Collapse isOpen={this.state.isOpen} onClick={this.toggle} navbar className='justify-content-center'>
-            <Nav className="p-0 w-75 justify-content-around" navbar>
-              <NavItem>
-                <NavLink href="/">Home</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/#/downloads">Downloads</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/#/team">Team</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/#/links">Links</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div >
+      <React.Fragment>
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top d-flex flex-row align-items-center justify-content-center">
+          <div className='d-flex align-items-center justify-content-center navbar-collapse collapse show'>
+            <div className='freaky-navbar-nav'>
+              <a className="d-flex" href="#/" alt='FreakOS'>
+                <img src={logo} alt='FreakyOS' style={{ width: "40px", height: "40px" }} />
+              </a>
+              <div className='freaky-nav-item'>
+                <a className='nav-link' href='#/'>Home</a>
+              </div>
+              <span>&middot;</span>
+              <div className='freaky-nav-item'>
+                <a className='nav-link' href='#/team'>Team</a>
+              </div>
+              <span>&middot;</span>
+              <div className='freaky-nav-item'>
+                <a className='nav-link' href='#/downloads'>Downloads</a>
+              </div>
+              <span>&middot;</span>
+              <div className='freaky-nav-item'>
+                <a className='nav-link' href='#/links'>Links</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </React.Fragment>
     );
   }
 }

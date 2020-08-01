@@ -34,7 +34,7 @@ function App() {
   return (
     <React.Suspense fallback={<Loading />}>
       <Header />
-      <main role='main' className='w-100 h-100' style={{ paddingBottom: '60px' }}>
+      <main role='main' className='w-100 h-100' style={{ paddingTop: '56px', paddingBottom: '60px' }}>
         <Router history={createBrowserHistory()}>
           <Switch>
             <Route path="/downloads">
