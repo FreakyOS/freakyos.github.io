@@ -35,7 +35,7 @@ export default class Teams extends Component {
   generateCard(data) {
     return data.map((member, i) => {
       return (
-        <Col xs="12" sm="6" md="3" lg="2" className="p-0 m-1"
+        <Col xs="12" sm="5" md="3" lg="2" className="p-0 m-1"
           style={{ maxHeight: "340px", width: "auto" }}>
           <Member key={i} member={member} />
         </Col>
@@ -69,17 +69,14 @@ export default class Teams extends Component {
   render() {
     initializeReactGA();
     return (
-      <React.Fragment>
-        <Container fluid>
-          <div className='freaky-card-group'>
-            {this.generateTeam()}
-          </div>
-          <div className='freaky-card-group'>
-            {this.generateMaintainers()}
-
-          </div>
-        </Container>
-      </React.Fragment>
+      <Container>
+        <div className='freaky-card-group'>
+          {this.generateTeam()}
+        </div>
+        <div className='freaky-card-group'>
+          {this.generateMaintainers()}
+        </div>
+      </Container>
     );
   }
 }
