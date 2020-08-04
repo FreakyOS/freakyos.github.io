@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from 'assets/images/logo.png';
+import logo from 'assets/images/logo192.png';
 
 export default class Navigation extends Component {
   constructor(props) {
