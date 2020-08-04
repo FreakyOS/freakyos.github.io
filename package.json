@@ -1,8 +1,8 @@
 {
-  "name": "freakysite",
-  "version": "0.1.0",
+  "name": "FreakyOS",
+  "version": "0.2.0",
   "private": false,
-  "homepage": "https://freakyos.github.io/",
+  "homepage": "https://freakyos.me/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
