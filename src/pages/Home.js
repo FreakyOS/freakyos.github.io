@@ -27,7 +27,7 @@ export default class Home extends Component {
           <Container fluid className='w-100'>
             <div class='d-flex flex-column align-items-center'>
               <h1 className='display-5'>FreakyOS</h1>
-              <p >If you're freaky then you're at the right place. Checkout our custom roms and feel the freak.</p>
+              <p >If you're a Freak! Then you're at the right place. Checkout our custom roms and feel The Freakiness!</p>
             </div>
           </Container>
         </Jumbotron>
