@@ -23,13 +23,7 @@ export default class Device extends Component {
   }
 
   datetime() {
-    let unix_timestamp = this.state.details.datetime
-    var date = new Date(unix_timestamp * 1000);
-    var year = date.getFullYear();
-    var month = date.getMonth();
-    var day = date.getDate();
-    var formattedDate = day + '/' + month + '/' + year;
-    return formattedDate;
+    return new Date(this.state.details.datetime*1000).toLocaleDateString('en-US');
   }
 
   formatBytes(bytes, decimals = 2) {
