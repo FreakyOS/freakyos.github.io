@@ -10,6 +10,7 @@ import telegramIcon from '@iconify/icons-logos/telegram';
 import instagramIcon from "@iconify/icons-il/instagram";
 import twitterIcon from "@iconify/icons-logos/twitter";
 import fileTypeCrowdin from '@iconify/icons-vscode-icons/file-type-crowdin';
+import freaky_logo from 'assets/images/logo192.png';
 
 function initializeReactGA() {
     ReactGA.initialize(process.env.REACT_APP_GA_ID);
@@ -201,7 +202,7 @@ export default class Links extends Component {
                     target="_blank"
                   >
                     <img
-                      src="https://avatars2.githubusercontent.com/u/65819960?s=200&v=4"
+                      src={freaky_logo}
                       alt="logo"
                       width="40%"
                       height="auto"

@@ -59,17 +59,17 @@ export default class Device extends Component {
       <Container fluid className="h-100 w-100 p-1">
         <div className="freaky-card" onClick={this.toggle}>
           <img src={this.props.device.image} alt={this.props.device.codename} />
-          <div className="freaky-card-footer">
-            {this.props.device.name}
-          </div>
+          <div className="freaky-card-footer">{this.props.device.name}</div>
           <Modal
             isOpen={this.state.isOpen}
             toggle={this.toggle}
             centered
           >
-            <ModalHeader toggle={this.toggle}>{this.props.device.name}</ModalHeader>
-            <ModalBody>
-              <Table borderless={true}>
+            <ModalHeader className="freaky-modal" toggle={this.toggle}>
+              {this.props.device.name}
+            </ModalHeader>
+            <ModalBody className="freaky-modal">
+              <Table className="freaky-modal" borderless={true}>
                 <tbody>
                   <tr>
                     <td>
@@ -111,7 +111,7 @@ export default class Device extends Component {
                 </tbody>
               </Table>
             </ModalBody>
-            <ModalFooter>
+            <ModalFooter className="freaky-modal">
               <Button
                 href={this.state.details.url}
                 target="_blank"
@@ -119,7 +119,7 @@ export default class Device extends Component {
                 rel="noopener noreferrer"
               >
                 Download
-                  </Button>
+              </Button>
               <Button
                 href={this.state.changelog}
                 target="_blank"
@@ -127,7 +127,7 @@ export default class Device extends Component {
                 rel="noopener noreferrer"
               >
                 Changelog
-                  </Button>
+              </Button>
             </ModalFooter>
           </Modal>
         </div>
