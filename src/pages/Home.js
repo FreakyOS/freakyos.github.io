@@ -86,15 +86,15 @@ export default class Home extends Component {
         </div>
         <h1 className="m-10 d-flex justify-content-center">About Us</h1>
         <div className="flex justify-center">
-          <div className="p-10 w-50 bg-gray-900 rounded">
+          <div className="p-10 md:w-1/2 bg-gray-900 rounded">
           <p className="text-center md:text-xl sm:text-sm">
             Freaky OS is AOSP based Custom ROM, primarily focused to deliver highly optimized operating system with minimal customization to the end user.
           </p>
         </div>
         </div>
-        <h1 className="m-10 d-flex justify-content-center">What about Updates?</h1>
+        <h1 className="m-10 d-flex justify-content-center text-4xl">Consistent Updates!</h1>
         <div className="flex justify-center">
-          <div className="p-10 w-50 bg-gray-900 rounded">
+          <div className="p-10 md:w-1/2 bg-gray-900 rounded">
           <p className="text-center md:text-xl sm:text-sm">
             Freaky OS team makes sure the users get every month security patch and feature updates and we have our dedicated updater app which keeps your device up to date.
           </p>
